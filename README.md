@@ -2,7 +2,8 @@
 
 The provided solution has 3 routes. The apis return data in json/xml format.
 
-Attached is the postman collection for the below apis.
+Attached is the postman collection for the below apis. 
+The data for this api is from the file at "CustomerNotification\CustomerNotification.API\Data\data.json" This sample data.json file contains 5 users with ids "user1", "user2", "user3", "user4", "user5"
 
 1) New User registered
 https://localhost:44356/api/messaging/{userId}/new
@@ -33,6 +34,9 @@ Xml response
         <LastName>User3Last</LastName>
     </BodyType>
 </UserRegisteredModel>
+
+UserId not found response
+<string>User Id does not exist.</string>
 
 2) User Deleted
 https://localhost:44356/api/messaging/{userId}/delete
