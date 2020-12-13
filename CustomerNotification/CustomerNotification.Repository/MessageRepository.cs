@@ -10,14 +10,14 @@ namespace CustomerNotification.Repository
 {
     public interface IMessageRepository
     {
-        Task<UserDetailsModel> GetUserDetails(string userId);
+        Task<UserDetailsModel> GetUserDetails(Guid userId);
             
-        Task<UserModel> GetUser(string userId);
+        Task<UserModel> GetUser(Guid userId);
     }
 
     public class MessageRepository : IMessageRepository
     {
-        public async Task<UserDetailsModel> GetUserDetails(string userId)
+        public async Task<UserDetailsModel> GetUserDetails(Guid userId)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace CustomerNotification.Repository
             }
         }
 
-        public async Task<UserModel> GetUser(string userId)
+        public async Task<UserModel> GetUser(Guid userId)
         {
             try
             {

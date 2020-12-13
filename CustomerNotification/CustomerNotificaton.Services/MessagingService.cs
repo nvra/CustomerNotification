@@ -7,11 +7,11 @@ namespace CustomerNotificaton.Services
 {
     public interface IMessagingService
     {
-        Task<UserRegisteredModel> GetUserRegisteredResponse(string userId);
+        Task<UserRegisteredModel> GetUserRegisteredResponse(Guid userId);
 
-        Task<UserBlockedModel> GetUserBlockedResponse(string userId);
+        Task<UserBlockedModel> GetUserBlockedResponse(Guid userId);
 
-        Task<UserDeletedModel> GetUserDeletedResponse(string userId);
+        Task<UserDeletedModel> GetUserDeletedResponse(Guid userId);
     }
 
     public class MessagingService : IMessagingService
@@ -29,7 +29,7 @@ namespace CustomerNotificaton.Services
             Console.WriteLine($"sending customer id: {customerId}, the following message {messageBody}");
         }
 
-        public async Task<UserRegisteredModel> GetUserRegisteredResponse(string userId)
+        public async Task<UserRegisteredModel> GetUserRegisteredResponse(Guid userId)
         {
             var user = await _messageRepository.GetUserDetails(userId);
 
@@ -37,7 +37,7 @@ namespace CustomerNotificaton.Services
             {
                 var response = new UserRegisteredModel
                 {
-                    BodyType = user
+                    Data = user
                 };
 
                 return response;
@@ -46,7 +46,7 @@ namespace CustomerNotificaton.Services
             return null;
         }
 
-        public async Task<UserBlockedModel> GetUserBlockedResponse(string userId)
+        public async Task<UserBlockedModel> GetUserBlockedResponse(Guid userId)
         {
             var user = await _messageRepository.GetUser(userId);
 
@@ -54,7 +54,7 @@ namespace CustomerNotificaton.Services
             {
                 var response = new UserBlockedModel
                 {
-                    BodyType = user
+                    Data = user
                 };
 
                 return response;
@@ -63,7 +63,7 @@ namespace CustomerNotificaton.Services
             return null;
         }
 
-        public async Task<UserDeletedModel> GetUserDeletedResponse(string userId)
+        public async Task<UserDeletedModel> GetUserDeletedResponse(Guid userId)
         {
             var user = await _messageRepository.GetUser(userId);
 
@@ -71,7 +71,7 @@ namespace CustomerNotificaton.Services
             {
                 var response = new UserDeletedModel
                 {
-                    BodyType = user
+                    Data = user
                 };
 
                 return response;

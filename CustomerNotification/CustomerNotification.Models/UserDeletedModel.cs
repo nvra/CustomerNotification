@@ -2,7 +2,7 @@
 {
     public class UserDeletedModel
     {
-        public string Type
+        public string MessageType
         {
             get
             {
@@ -10,6 +10,6 @@
             }
         }
 
-        public UserModel BodyType { get; set; }
+        public UserModel Data { get; set; }
     }
 }
