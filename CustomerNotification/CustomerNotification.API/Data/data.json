@@ -1,0 +1,32 @@
+[
+  {
+    "UserId": "user1",
+    "FirstName": "User1First",
+    "LastName": "User1Last",
+    "Email": "user1@abc.com"
+  },
+  {
+    "UserId": "user2",
+    "FirstName": "User2First",
+    "LastName": "User2Last",
+    "Email": "user2@abc.com"
+  },
+  {
+    "UserId": "user3",
+    "FirstName": "User3First",
+    "LastName": "User3Last",
+    "Email": "user3@abc.com"
+  },
+  {
+    "UserId": "user4",
+    "FirstName": "User4First",
+    "LastName": "User4Last",
+    "Email": "user4@abc.com"
+  },
+  {
+    "UserId": "user5",
+    "FirstName": "User5First",
+    "LastName": "User5Last",
+    "Email": "user5@abc.com"
+  }
+]
