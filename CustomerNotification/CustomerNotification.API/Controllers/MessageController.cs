@@ -1,6 +1,7 @@
 ﻿using CustomerNotification.Models;
 using CustomerNotificaton.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace CustomerNotification.API.Controllers
@@ -24,9 +25,9 @@ namespace CustomerNotification.API.Controllers
 
         [Route("api/messaging/{userId}/new")]
         [HttpGet]
-        public async Task<IActionResult> GetNewUserRegisteredResponse([FromRoute] string userId)
+        public async Task<IActionResult> GetNewUserRegisteredResponse([FromRoute] Guid userId)
         {
-            if(!ModelState.IsValid || string.IsNullOrEmpty(userId))
+            if(!ModelState.IsValid || userId == null)
             {
                 return BadRequest();
             }
@@ -43,9 +44,9 @@ namespace CustomerNotification.API.Controllers
 
         [Route("api/messaging/{userId}/block")]
         [HttpGet]
-        public async Task<IActionResult> GetUserBlockedResponse([FromRoute] string userId)
+        public async Task<IActionResult> GetUserBlockedResponse([FromRoute] Guid userId)
         {
-            if (!ModelState.IsValid || string.IsNullOrEmpty(userId))
+            if (!ModelState.IsValid || userId == null)
             {
                 return BadRequest();
             }
@@ -62,9 +63,9 @@ namespace CustomerNotification.API.Controllers
 
         [Route("api/messaging/{userId}/delete")]
         [HttpGet]
-        public async Task<IActionResult> GetUserDeletedResponse([FromRoute] string userId)
+        public async Task<IActionResult> GetUserDeletedResponse([FromRoute] Guid userId)
         {
-            if (!ModelState.IsValid || string.IsNullOrEmpty(userId))
+            if (!ModelState.IsValid || userId == null)
             {
                 return BadRequest();
             }

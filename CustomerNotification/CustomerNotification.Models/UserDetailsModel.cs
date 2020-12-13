@@ -1,13 +1,15 @@
-﻿namespace CustomerNotification.Models
+﻿using System;
+
+namespace CustomerNotification.Models
 {
     public class UserModel
     {
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 
     public class UserDetailsModel
     {
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
 
         public string Email { get; set; }
 

@@ -2,7 +2,7 @@
 {
     public class UserRegisteredModel
     {
-        public string Type 
+        public string MessageType 
         { 
             get
             {
@@ -10,6 +10,6 @@
             }
         }
 
-        public UserDetailsModel BodyType { get; set; }
+        public UserDetailsModel Data { get; set; }
     }
 }
